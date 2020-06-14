@@ -53,3 +53,12 @@ class ProductPage(BasePage):
     def check_message_product_price(self, product_price_expected):
         product_price_actual = self.get_message_product_price()
         assert product_price_actual == product_price_expected, f"Product prices don't match. Expected <{product_price_expected}>, found <{product_price_actual}>"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.MESSAGE_PRODUCT_NAME), \
+        "Success message is presented, but should not be"
+
+    def should_disappear_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.MESSAGE_PRODUCT_NAME), \
+        "Success message is presented, but should disappear"
+        

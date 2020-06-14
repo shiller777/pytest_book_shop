@@ -13,3 +13,4 @@ class ProductPageLocators():
     MESSAGE_PRODUCT_PRICE = (By.CSS_SELECTOR, "div#messages > div.alert-info > div.alertinner strong")
     PRODUCT_NAME= (By.CSS_SELECTOR, "article.product_page h1")
     PRODUCT_PRICE = (By.CSS_SELECTOR, "article.product_page p.price_color")
+    
