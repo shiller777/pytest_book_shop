@@ -46,12 +46,10 @@ class ProductPage(BasePage):
         message_product_price_link = self.browser.find_element(*ProductPageLocators.MESSAGE_PRODUCT_PRICE)
         return message_product_price_link.text
 
-    def check_message_product_name(self):
-        product_name_expected = self.get_product_name()
+    def check_message_product_name(self, product_name_expected):
         product_name_actual = self.get_message_product_name()
         assert product_name_actual == product_name_expected, f"Product names don't match. Expected <{product_name_expected}>, found <{product_name_actual}>"
 
-    def check_message_product_price(self):
-        product_price_expected = self.get_product_price()
+    def check_message_product_price(self, product_price_expected):
         product_price_actual = self.get_message_product_price()
         assert product_price_actual == product_price_expected, f"Product prices don't match. Expected <{product_price_expected}>, found <{product_price_actual}>"
