@@ -5,7 +5,7 @@ class ProductPage(BasePage):
     def should_be_product_page(self):
         self.should_be_product_name()
         self.should_be_product_price()
-        self.should_be_add_to_cart_button()
+        self.should_be_add_to_basket_button()
         
     def should_be_success_message(self):
         self.should_be_message_product_name()
@@ -17,8 +17,8 @@ class ProductPage(BasePage):
     def should_be_product_price(self):
         assert self.is_element_present(*ProductPageLocators.PRODUCT_PRICE), "Product price not found on product page"
 
-    def should_be_add_to_cart_button(self):
-        assert self.is_element_present(*ProductPageLocators.ADD_TO_CART_BUTTON), "'Add to cart' button not found on product page"
+    def should_be_add_to_basket_button(self):
+        assert self.is_element_present(*ProductPageLocators.ADD_TO_BASKET_BUTTON), "'Add to basket' button not found on product page"
 
     def should_be_message_product_name(self):
         assert self.is_element_present(*ProductPageLocators.MESSAGE_PRODUCT_NAME), "Product name not found in success message"
@@ -26,9 +26,9 @@ class ProductPage(BasePage):
     def should_be_message_product_price(self):
         assert self.is_element_present(*ProductPageLocators.MESSAGE_PRODUCT_PRICE), "Product price not found in success message"
         
-    def add_to_cart(self):
-        add_to_cart_button = self.browser.find_element(*ProductPageLocators.ADD_TO_CART_BUTTON)
-        add_to_cart_button.click()
+    def add_to_basket(self):
+        add_to_basket_button = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON)
+        add_to_basket_button.click()
 
     def get_product_name(self):
         product_name_link = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME)
