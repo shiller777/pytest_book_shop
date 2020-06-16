@@ -2,12 +2,16 @@ from selenium.webdriver.common.by import By
 
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     BASKET_LINK = (By.CSS_SELECTOR, "a[href*='basket']")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "form#login_form")
     REGISTRATION_FORM = (By.CSS_SELECTOR, "form#register_form")
+    REGISTRATION_EMAIL_INPUT = (By.CSS_SELECTOR, "input#id_registration-email")
+    REGISTRATION_PASSWORD_INPUT = (By.CSS_SELECTOR, "input#id_registration-password1")
+    REGISTRATION_CONFIRM_PASSWORD_INPUT = (By.CSS_SELECTOR, "input#id_registration-password2")
+    REGISTRATION_SUBMIT_BUTTON = (By.CSS_SELECTOR, "button[name='registration_submit']")
 
 class ProductPageLocators():
     ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, "button.btn-add-to-basket")
